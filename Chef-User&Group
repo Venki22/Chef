@@ -7,9 +7,14 @@ group 'devOps' do
  append true
 end
 
---verify cat /etc/gpasswd
+OUTPUT VERIFICATION:
+-------------------
+--verify with below command 
+cat /etc/gpasswd
 -----
 raj:x:1001:1002::/home/raj:/bin/bash
---verify cat /etc/group
+
+--verify with below command  
+cat /etc/group
 -----
 devOps:x:1003:raj
