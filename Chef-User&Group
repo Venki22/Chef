@@ -1,0 +1,15 @@
+user 'raj' do
+ action :create
+end
+group 'devOps' do
+ action :create
+ members'raj'
+ append true
+end
+
+--verify cat /etc/gpasswd
+-----
+raj:x:1001:1002::/home/raj:/bin/bash
+--verify cat /etc/group
+-----
+devOps:x:1003:raj
