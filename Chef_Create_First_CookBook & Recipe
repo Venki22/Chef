@@ -1,0 +1,77 @@
+CREATE YOUR FIRST COOKBOOK & RECIPE
+-----------------------------------
+sudo su
+mkdir cookbooks[It should be cookbooks]
+ls -ltr
+chef generate cookbook <<cookbook_name>>
+Eg:chef generate cookbook test-cookbook[creating cookbook under cookbooks directory]
+cd test-cookbook
+tree
+--OUTPUT
+test-cookbook
+    ├── CHANGELOG.md
+    ├── chefignore
+    ├── kitchen.yml
+    ├── LICENSE
+    ├── metadata.rb
+    ├── Policyfile.rb
+    ├── README.md
+    ├── recipes
+    │   ├── default.rb
+    │  
+    ├── spec
+    │   ├── spec_helper.rb
+    │   └── unit
+    │       └── recipes
+    │           ├── default_spec.rb
+    │           └── test-recipe_spec.rb
+    └── test
+        └── integration
+            └── default
+                ├── default_test.rb
+                └── test-recipe_test.rb
+
+
+chef generate recipe <<recipe_name>>
+chef generate recipe test-recipe	[creating recipe] 
+tree
+	.
+	├── CHANGELOG.md
+	├── chefignore
+	├── kitchen.yml
+	├── LICENSE
+	├── metadata.rb
+	├── Policyfile.rb
+	├── README.md
+	├── recipes
+	│   ├── default.rb
+	│   └── test-recipe.rb
+	├── spec
+	│   ├── spec_helper.rb
+	│   └── unit
+	│       └── recipes
+	│           ├── default_spec.rb
+	│           └── test-recipe_spec.rb
+	└── test
+		└── integration
+			└── default
+				├── default_test.rb
+				└── test-recipe_test.rb
+
+vi <<recipe path>>
+vi recipes/test-recipe.rb
+	> Press i for : INSERT MODE
+		
+			file '/myfile' do
+				content "Hello Dear Student!"
+				action :create
+			end
+	> :wq! (save & exit)
+
+chef exec ruby -c <<recipe path>>
+chef exec ruby -c test-cookbook/recipes/test-recipe.rb [To Verify Syntax error]
+
+chef-client -zr "recipe[<<cookbook_name>>::<<recipe_name>>]
+chef-client -zr "recipe[test-cookbook::test-recipe]"
+ls / [To Verify "/myfile" created or not]
+
