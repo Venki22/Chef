@@ -16,5 +16,5 @@ raj:x:1001:1002::/home/raj:/bin/bash
 
 --verify with below command  
 cat /etc/group
------fafaas
+
 devOps:x:1003:rajs
