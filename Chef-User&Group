@@ -17,4 +17,4 @@ raj:x:1001:1002::/home/raj:/bin/bash
 --verify with below command  
 cat /etc/group
 -----
-devOps:x:1003:raj
+devOps:x:1003:rajs
